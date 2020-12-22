@@ -8,11 +8,17 @@ type OnOffPropsType = {
 
 export function OnOff(props: OnOffPropsType) {
 
+    const onClicked = () => props.onClick(true)
+    const offClicked = () => props.onClick(false)
+    const onStyle = props.on ? s.onStyleA : s.onStyleD
+    const offStyle = props.on ? s.offStyleD : s.offStyleA
+    const indicatorStyle = props.on ? s.indicatorStyleOn : s.indicatorStyleOff
+
     return (
         <div>
-            <div className={props.on ? s.onStyleA : s.onStyleD} onClick={() => props.onClick(true)}>On</div>
-            <div className={props.on ? s.offStyleD : s.offStyleA} onClick={() => props.onClick(false)}>Off</div>
-            <div className={props.on ? s.indicatorStyleOn : s.indicatorStyleOff}>{props.on}</div>
+            <div className={onStyle} onClick={onClicked}>On</div>
+            <div className={offStyle} onClick={offClicked}>Off</div>
+            <div className={indicatorStyle}>{props.on}</div>
         </div>
     )
 }
