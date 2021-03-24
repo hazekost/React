@@ -2,18 +2,23 @@ import React, {useState} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
+import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 export function App() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(0)
+    const [value, setValue] = useState(0)
     const [collapsed, setCollapsed] = useState(true)
+    const [on, setOn] = useState(false)
 
     return (
         <div className={"App"}>
             <AppTitle title={"This is App component"}/>
-            <Rating value={value1} setValue={setValue1}/>
+            <Rating value={value} setValue={setValue}/>
             <Accordion title={"Menu"} collapsed={collapsed} setCollapsed={setCollapsed}/>
-            <Rating value={value2} setValue={setValue2}/>
+            <OnOff on={on} setOn={setOn}/>
+            <UncontrolledAccordion title={"Settings"}/>
+            <UncontrolledRating/>
         </div>
     );
 }
