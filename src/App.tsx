@@ -5,8 +5,10 @@ import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 export function App() {
+
     const [value, setValue] = useState(0)
     const [collapsed, setCollapsed] = useState(true)
     const [on, setOn] = useState(false)
@@ -19,6 +21,7 @@ export function App() {
             <OnOff on={on} setOn={setOn}/>
             <UncontrolledAccordion title={"Settings"}/>
             <UncontrolledRating/>
+            <UncontrolledOnOff/>
         </div>
     );
 }
