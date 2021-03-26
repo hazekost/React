@@ -3,6 +3,10 @@
     margin-top: 30px;
 }
 
+.container {
+    display: flex;
+}
+
 .onOff {
     height: 20px;
     border: 1px solid;
