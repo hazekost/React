@@ -6,7 +6,7 @@ export type OnOffPropsType = {
     setOn: (value: boolean) => void
 }
 
-export function OnOff(props: OnOffPropsType) {
+export const OnOff = React.memo((props: OnOffPropsType) => {
 
     return <div className={s.onOffBlock}>
         <div className={s.container}>
@@ -19,4 +19,4 @@ export function OnOff(props: OnOffPropsType) {
             <div className={s.ind} style={{backgroundColor: props.on ? "green" : "red"}}>{props.on}</div>
         </div>
     </div>
-}
+})

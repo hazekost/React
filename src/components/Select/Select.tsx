@@ -12,7 +12,7 @@ type SelectPropsType = {
     value?: string
 }
 
-export const Select: React.FC<SelectPropsType> = (props) => {
+export const Select: React.FC<SelectPropsType> = React.memo((props) => {
 
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
@@ -51,7 +51,7 @@ export const Select: React.FC<SelectPropsType> = (props) => {
                                       setHoveredElementValue={setHoveredElementValue} setValue={props.setValue}/>}
         </div>
     )
-}
+})
 
 type SelectOptionsPropsType = {
     items: Array<ItemType>
@@ -61,7 +61,7 @@ type SelectOptionsPropsType = {
     setHoveredElementValue: (value: string) => void
 }
 
-const SelectOptions: React.FC<SelectOptionsPropsType> = (props) => {
+const SelectOptions: React.FC<SelectOptionsPropsType> = React.memo((props) => {
 
     const clickHandler = (value: string) => {
         props.setValue(value)
@@ -76,4 +76,4 @@ const SelectOptions: React.FC<SelectOptionsPropsType> = (props) => {
                                        onClick={() => clickHandler(i.value)}>{i.title}</div>)}
         </div>
     )
-}
+})
