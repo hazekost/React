@@ -1,0 +1,32 @@
+.onOff{
+    display: flex;
+    margin-left: 50px;
+}
+.onOff > div {
+    margin-left: 2px;
+}
+
+.on{
+    width: 40px;
+    border: 1px solid
+}
+
+.off{
+    width: 40px;
+    border: 1px solid
+}
+
+.sw{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid
+}
+
+.active {
+    background-color: green;
+}
+
+.unActive {
+    background-color: red;
+}
