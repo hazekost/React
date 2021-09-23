@@ -1,6 +1,5 @@
 .onOff{
     display: flex;
-    margin-left: 50px;
 }
 .onOff > div {
     margin-left: 2px;

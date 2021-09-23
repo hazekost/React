@@ -3,6 +3,7 @@ import './App.css';
 import { Accordion } from './components/Accordion/Accordion';
 import { UncontrolledAccordion } from './components/Accordion/UncontrolledAccordion';
 import { OnOff } from './components/OnOff/OnOff';
+import { UncontrolledOnOff } from './components/OnOff/UncontrolledOnOff';
 import { Rating } from './components/Rating/Rating';
 import { UncontrolledRating } from './components/Rating/UncontrolledRating';
 
@@ -14,15 +15,17 @@ export function App() {
 
     let [value, setValue] = useState(0);
     let [collapsed, setCollapsed] = useState(false);
+    let [on, setOn] = useState(false);
 
     return (
         <div className={"App"}>
             <AppTitle title={"This is App Component"} />
             <Rating value={value} setValue={setValue} />
             <UncontrolledRating />
-            <UncontrolledAccordion title={"Menu"} />
-            <Accordion title={"List"} collapsed={collapsed} setCollapsed={setCollapsed} />
-            <OnOff />
+            <Accordion title={"Controlled"} collapsed={collapsed} setCollapsed={setCollapsed} />
+            <UncontrolledAccordion title={"Uncontrolled"} />
+            <OnOff on={on} setOn={setOn} />
+            <UncontrolledOnOff />
         </div>
     );
 }
