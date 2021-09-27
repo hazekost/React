@@ -1,11 +1,11 @@
-type AccordionPropsType = {
-    title: string
-    collapsed: boolean
-    setCollapsed: (collapsed: boolean) => void
-}
 type AccordionTitlePropsType = {
     title: string
     setCollapsed: () => void
+}
+export type AccordionPropsType = {
+    title: string
+    collapsed: boolean
+    setCollapsed: (collapsed: boolean) => void
 }
 
 export function Accordion(props: AccordionPropsType) {

@@ -1,4 +1,4 @@
-type RatingPropsType = {
+export type RatingPropsType = {
     value: number
     setValue: (value: number) => void
 }
