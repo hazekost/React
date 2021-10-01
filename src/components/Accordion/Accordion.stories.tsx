@@ -9,7 +9,6 @@ export default {
     }
 } as Meta;
 
-
 const Template: Story<AccordionPropsType> = (args) => <Accordion {...args} />;
 
 export const Collapsed = Template.bind({});
