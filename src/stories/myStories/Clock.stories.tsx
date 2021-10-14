@@ -1,35 +1,21 @@
-import { useEffect, useState } from "react";
+import { Meta, Story } from "@storybook/react"
+import { Clock, ClockPropsType } from "../../components/Clock/Clock"
 
 export default {
-    title: "Clock Demo",
-}
+    component: Clock,
+    title: "Clock Demo"
+} as Meta
 
-const getDigitString = (num: number) => num < 10 ? `0${num}` : num
-
-const Clock = () => {
-
-    let [date, setDate] = useState(new Date())
-
-    useEffect(() => {
-        let intervalid = setInterval(() => {
-            console.log("interval");
-            setDate(new Date())
-        }, 1000)
-        return () => {
-            clearInterval(intervalid)
-        }
-    }, [])
-
-    return <div>
-        <span>{getDigitString(date.getHours())}</span>
-        :
-        <span>{getDigitString(date.getMinutes())}</span>
-        :
-        <span>{getDigitString(date.getSeconds())}</span>
-    </div>
-}
-
-
-const Template = () => <Clock />
+const Template: Story<ClockPropsType> = (args) => <Clock {...args} />
 
 export const ClockExample = Template.bind({})
+
+ClockExample.args = {
+    mode: "digital"
+}
+
+export const AnalogClockExample = Template.bind({})
+
+AnalogClockExample.args = {
+    mode: "analog"
+}
